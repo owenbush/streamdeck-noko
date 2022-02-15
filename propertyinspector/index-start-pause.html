@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>com.owenbush.streamdeck.noko.pi</title>
+  <link rel="stylesheet" href="sdpi.css">
+  <script src="js/common.js"></script>
+  <script src="js/common_pi.js"></script>
+  <script src="js/index-start-pause.js"></script>
+  <style>
+    .hidden,
+    .hiddenError,
+    .hiddenAll {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sdpi-wrapper">
+    <div class="sdpi-item">
+      <div class="sdpi-item-label">Button Label</div>
+      <input class="sdpi-item-value" id="label" value=""
+        placeholder="Enter button label" onchange="saveSettings()">
+      <span>Do not use the main title to add button text</span>
+    </div>
+    <div class="sdpi-item">
+      <div class="sdpi-item-label">Access Token</div>
+      <input class="sdpi-item-value" id="accessToken" value="" pattern="[a-z0-9\-]+" placeholder="Enter your Access Token" onchange="saveSettings()" required>
+    </div>
+    <div class="sdpi-item hidden" id="tokenError">
+      <details class="message caution">
+        <summary>Access Token is invalid!</summary>
+      </details>
+    </div>
+    <hr>
+    <div class="sdpi-item hidden" id="projectWrapper">
+      <div class="sdpi-item-label">Project</div>
+      <select class="sdpi-item-value select" id="project" onchange="saveSettings()" required>
+        <option value="0"></option>
+      </select>
+    </div>
+  </div>
+</body>
+
+</html>

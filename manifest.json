@@ -1,0 +1,44 @@
+{
+    "Actions": [
+      {
+        "Name": "Start/Pause Timer",
+        "Icon": "icons/streamdeck-noko-start-actionicon",
+        "Tooltip": "Start/Pause Noko Timer",
+        "UUID": "com.owenbush.streamdeck.noko.start",
+        "States": [
+          {
+            "Image": "icons/actionImageOff"
+          },
+          {
+            "Image": "icons/actionImageOn"
+          }
+        ],
+        "PropertyInspectorPath": "propertyinspector/index-start-pause.html",
+        "SupportedInMultiActions": false
+      }
+    ],
+    "Name": "Noko",
+    "Description": "Track your time using Noko and Stream Deck",
+    "Author": "owenbush",
+    "URL": "https://owenbush.dev",
+    "Icon": "icons/pluginIcon",
+    "Category": "Noko",
+    "CategoryIcon": "icons/pluginIcon",
+    "CodePath": "index.html",
+    "SDKVersion": 2,
+    "Version": "1.0.0",
+    "OS": [
+      {
+          "Platform": "mac",
+          "MinimumVersion" : "10.11"
+      },
+      {
+          "Platform": "windows",
+          "MinimumVersion" : "10"
+      }
+    ],
+    "Software":
+      {
+          "MinimumVersion" : "4.7"
+      }
+  }
