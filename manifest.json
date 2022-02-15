@@ -2,7 +2,7 @@
     "Actions": [
       {
         "Name": "Start/Pause Timer",
-        "Icon": "icons/streamdeck-noko-start-actionicon",
+        "Icon": "icons/actionIcon",
         "Tooltip": "Start/Pause Noko Timer",
         "UUID": "com.owenbush.streamdeck.noko.start",
         "States": [
