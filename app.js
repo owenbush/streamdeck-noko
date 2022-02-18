@@ -45,6 +45,8 @@ const action = {
 
     let label = Utils.getLabel(jsn);
     $SD.api.setTitle(Utils.getContext(jsn), label);
+    this.buttonExists = true;
+    this.pollTimers(jsn);
   },
 
   /**
@@ -231,18 +233,20 @@ const action = {
    * Refresh the button with fresh data from the API.
    */
   refreshButton: async function (jsn) {
-    this.getProjectTimer(jsn).then(timer => {
-      if (!Utils.isObjectEmpty(timer)) {
-        if (timer.state == 'running') {
-          this.setButtonActive(jsn, timer);
+    if (Utils.getProject(jsn)) {
+      this.getProjectTimer(jsn).then(timer => {
+        if (!Utils.isObjectEmpty(timer)) {
+          if (timer.state == 'running') {
+            this.setButtonActive(jsn, timer);
+          }
+          else {
+            this.setButtonInactive(jsn, timer);
+          }
         }
         else {
-          this.setButtonInactive(jsn, timer);
+          this.resetButton(jsn);
         }
-      }
-      else {
-        this.resetButton(jsn);
-      }
-    });
+      });
+    }
   }
 };
